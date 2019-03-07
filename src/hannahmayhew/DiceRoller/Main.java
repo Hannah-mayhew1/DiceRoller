@@ -9,20 +9,28 @@ public class Main {
         System.out.println("Welcome to the E-Dice!");
         System.out.println("----------------------");
 
-        System.out.println("How many times would you like to Roll?");
+        int noOfSides = getUserIntInput("Please enter the number of sides you wish for your dice to have: ");
+        int noOfRolls = getUserIntInput("How many times would you like to Roll?");
 
-        Scanner noOfRollsInput = new Scanner(System.in);
-        int noOfRolls = noOfRollsInput.nextInt();
+        rollDice(noOfSides, noOfRolls);
+    }
+
+    private static int getUserIntInput(String instruction) {
+        System.out.println(instruction);
+        Scanner userInput = new Scanner(System.in);
+        return userInput.nextInt();
+    }
+
+    private static void rollDice(int noOfSides, int noOfRolls) {
 
         for (int rolls = 0; rolls < noOfRolls; rolls++) {
 
-            int numSides = 6;
-
             Random generator = new Random();
-            int diceRoll = generator.nextInt(numSides) + 1;
+            int diceRoll = generator.nextInt(noOfSides) + 1;
 
             System.out.println("You rolled a " + (diceRoll) + "!");
 
         }
     }
 }
+

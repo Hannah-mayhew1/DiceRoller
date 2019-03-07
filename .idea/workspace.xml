@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9032dbc5-4c5c-4f2c-a552-bc38181042ab" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DiceRoller/hannahmayhew/DiceRoller/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DiceRoller/hannahmayhew/DiceRoller/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hannahmayhew/DiceRoller/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hannahmayhew/DiceRoller/Main.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -18,8 +16,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/hannahmayhew/DiceRoller/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" column="5" lean-forward="true" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+            <state relative-caret-position="215">
+              <caret line="23" column="64" lean-forward="true" selection-start-line="23" selection-start-column="64" selection-end-line="23" selection-end-column="64" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -40,9 +38,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="765" />
+    <option name="x" value="491" />
     <option name="y" value="26" />
-    <option name="width" value="675" />
+    <option name="width" value="949" />
     <option name="height" value="823" />
   </component>
   <component name="ProjectView">
@@ -99,18 +97,18 @@
       <option name="presentableId" value="Default" />
       <updated>1551951310311</updated>
       <workItem from="1551951314133" duration="188000" />
-      <workItem from="1551951549815" duration="2591000" />
+      <workItem from="1551951549815" duration="5609000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2779000" />
+    <option name="totallyTimeSpent" value="5797000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="765" y="26" width="675" height="823" extended-state="0" />
+    <frame x="491" y="26" width="949" height="823" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21800947" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15214995" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Learn" order="3" />
@@ -148,8 +146,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/hannahmayhew/DiceRoller/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="5" lean-forward="true" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+        <state relative-caret-position="215">
+          <caret line="23" column="64" lean-forward="true" selection-start-line="23" selection-start-column="64" selection-end-line="23" selection-end-column="64" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
