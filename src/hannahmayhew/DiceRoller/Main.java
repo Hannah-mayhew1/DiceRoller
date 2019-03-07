@@ -11,12 +11,48 @@ public class Main {
         System.out.println("Welcome to the E-Dice!");
         System.out.println("----------------------");
 
+        System.out.println("Would you like to use a 'standard' or a 'custom' dice?");
+        Scanner typeOfDiceInput = new Scanner(System.in);
+        String typeOfDice = typeOfDiceInput.next();
+
+        if (typeOfDice.equals("standard")) {
+            standardDiceRoll();
+        }
+        else if (typeOfDice.equals("custom")) {
+            customDiceRoll();
+        }
+
+    }
+
+    private static void standardDiceRoll() {
         int noOfSides = getUserIntInput("Please enter the number of sides you wish for your dice to have: ");
         int noOfRolls = getUserIntInput("How many times would you like to Roll?");
 
-        List<Integer> listOfRolls = rollDice(noOfSides, noOfRolls);
+        List<Integer> listOfStandardRolls = rollStandardDice(noOfSides, noOfRolls);
 
-        System.out.println("The sum of your rolls is " + calculateSumOfRolls(listOfRolls));
+        System.out.println("The sum of your rolls is " + calculateSumOfRolls(listOfStandardRolls));
+    }
+
+    private static void customDiceRoll() {
+        int noOfRolls = getUserIntInput("How many times would you like to Roll?");
+
+        List<Integer> customFaces = getCustomFacesInput();
+
+        List<Integer> listOfCustomRolls = rollCustomDice(customFaces, noOfRolls);
+
+        System.out.println("The sum of your rolls is " + calculateSumOfRolls(listOfCustomRolls));
+
+    }
+
+    private static List<Integer> getCustomFacesInput() {
+        int noOfFaces = getUserIntInput("How many faces does your custom dice have?");
+        List<Integer> customFaces = new ArrayList<>();
+
+        for (int face = 0; face < noOfFaces ; face++) {
+            int faceNumber = getUserIntInput("What number is on face " + (face + 1) + "?");
+            customFaces.add(faceNumber);
+        }
+        return customFaces;
     }
 
     private static int getUserIntInput(String instruction) {
@@ -25,25 +61,36 @@ public class Main {
         return userInput.nextInt();
     }
 
-    private static List<Integer> rollDice(int noOfSides, int noOfRolls) {
-        List<Integer> listOfRolls = new ArrayList<>();
+    private static List<Integer> rollStandardDice(int noOfSides, int noOfRolls) {
+        List<Integer> listOfStandardRolls = new ArrayList<>();
 
         for (int rolls = 0; rolls < noOfRolls; rolls++) {
 
-            Random generator = new Random();
-            int diceRoll = generator.nextInt(noOfSides) + 1;
+            Random standardGenerator = new Random();
+            int standardDiceRoll = standardGenerator.nextInt(noOfSides) + 1;
 
-            listOfRolls.add(diceRoll);
+            listOfStandardRolls.add(standardDiceRoll);
         }
-        return listOfRolls;
+        return listOfStandardRolls;
+    }
+
+    private static List<Integer> rollCustomDice(List<Integer> customFaces, int noOfRolls) {
+        List<Integer> listOfCustomRolls = new ArrayList<>();
+
+        for (int rolls = 0; rolls < noOfRolls; rolls++) {
+            Random customGenerator = new Random();
+            int customRoll = customFaces.get(customGenerator.nextInt(customFaces.size()));
+            listOfCustomRolls.add(customRoll);
+        }
+        return listOfCustomRolls;
     }
 
     private static int calculateSumOfRolls (List<Integer> listOfRolls) {
-        int sumOfRolls = listOfRolls.get(0);
-        for (int roll = 1; roll < listOfRolls.size(); roll++) {
-            sumOfRolls = sumOfRolls + listOfRolls.get(roll);
+        int sumOfStandardRolls = listOfRolls.get(0);
+        for (int standardRoll = 1; standardRoll < listOfRolls.size(); standardRoll++) {
+            sumOfStandardRolls = sumOfStandardRolls + listOfRolls.get(standardRoll);
         }
-        return sumOfRolls;
+        return sumOfStandardRolls;
     }
 }
 
