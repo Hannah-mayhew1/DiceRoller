@@ -1,5 +1,7 @@
 package hannahmayhew.DiceRoller;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -12,7 +14,9 @@ public class Main {
         int noOfSides = getUserIntInput("Please enter the number of sides you wish for your dice to have: ");
         int noOfRolls = getUserIntInput("How many times would you like to Roll?");
 
-        rollDice(noOfSides, noOfRolls);
+        List<Integer> listOfRolls = rollDice(noOfSides, noOfRolls);
+
+        System.out.println("The sum of your rolls is " + calculateSumOfRolls(listOfRolls));
     }
 
     private static int getUserIntInput(String instruction) {
@@ -21,16 +25,25 @@ public class Main {
         return userInput.nextInt();
     }
 
-    private static void rollDice(int noOfSides, int noOfRolls) {
+    private static List<Integer> rollDice(int noOfSides, int noOfRolls) {
+        List<Integer> listOfRolls = new ArrayList<>();
 
         for (int rolls = 0; rolls < noOfRolls; rolls++) {
 
             Random generator = new Random();
             int diceRoll = generator.nextInt(noOfSides) + 1;
 
-            System.out.println("You rolled a " + (diceRoll) + "!");
-
+            listOfRolls.add(diceRoll);
         }
+        return listOfRolls;
+    }
+
+    private static int calculateSumOfRolls (List<Integer> listOfRolls) {
+        int sumOfRolls = listOfRolls.get(0);
+        for (int roll = 1; roll < listOfRolls.size(); roll++) {
+            sumOfRolls = sumOfRolls + listOfRolls.get(roll);
+        }
+        return sumOfRolls;
     }
 }
 
